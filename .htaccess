@@ -1,0 +1,31 @@
+# Activar RewriteEngine
+RewriteEngine on
+RewriteRule ^css/estilos$ css/estilos.css [L]
+
+# Controlador del Error 404
+ErrorDocument 404 http://127.0.0.1/proyectos/dino/404.php
+# Reescribir la URL solicitada por el usuario
+
+#   Entrada:  recetas
+#   Salida: recetas.php
+RewriteRule ^recetas$ recetas.php [L]
+
+#   Entrada:  video
+#   Salida: videos.php
+RewriteRule ^videos$ videos.php [L]
+
+#   Entrada:  principal
+#   Salida: index.php
+RewriteRule ^principal$ index.php [L]
+
+#   Entrada:  recetas/categoria
+#   Salida: recetas-categoria.php?id=categoria
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^recetas/([a-zA-Z0-9-]*)/?$ recetas-categoria.php?id=$1 [L]
+
+#   Entrada:  video/categoria
+#   Salida: videos-categoria.php?id=categoria
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^videos/([a-zA-Z0-9-]*)/?$ videos-categoria.php?id=$1 [L]
