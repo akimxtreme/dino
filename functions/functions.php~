@@ -7,8 +7,8 @@ Website: http://www.webmetropoli.com
 */
 class html5 {
     // Atributos
-    //public $rutaGlobal = "http://127.0.0.1/dino/";
-    public $rutaGlobal = "http://127.0.0.1/dino/";
+    //public $rutaGlobal = "http://127.0.0.1/proyectos/dino/";
+    public $rutaGlobal = "http://127.0.0.1/proyectos/dino/";
     public $title_page;
     // Métodos
     public function __construct($title_page){
